@@ -66,7 +66,7 @@ CREATE TABLE album(
 CREATE TABLE musica(
     musica_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
-    duracao INT,
+    duracao INT NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) engine = InnoDB;
@@ -143,13 +143,13 @@ VALUES
     ("BREAK MY SOUL", 279, 1),
     ("VIRGO'S GROOVE", 369, 1),
     ("ALIEN SUPERSTAR", 116, 1),
-    ("Don't Stop Me Now", NULL, 2),
-    ("Under Pressure", NULL, 3),
-    ("Como Nossos Pais", NULL, 4),
-    ("O Medo de Amar é o Medo de Ser Livre", NULL, 5),
-    ("Samba em Paris", NULL, 6),
-    ("The Bard's Song", NULL, 7),
-    ("Feeling Good", NULL, 8);
+    ("Don't Stop Me Now", 203, 2),
+    ("Under Pressure", 152, 3),
+    ("Como Nossos Pais", 105, 4),
+    ("O Medo de Amar é o Medo de Ser Livre", 207, 5),
+    ("Samba em Paris", 267, 6),
+    ("The Bard's Song", 244, 7),
+    ("Feeling Good", 100, 8);
 
 INSERT INTO historico_usuario (usuario_id, musica_id, data_historico)
 VALUES 
