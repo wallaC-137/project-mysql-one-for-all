@@ -22,8 +22,10 @@
 --   ('exemplo de dados 1', 'exemplo de dados X'),
 --   ('exemplo de dados 2', 'exemplo de dados Y');
 
+
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
+USE SpotifyClone;
 
 CREATE TABLE plano(
     plano_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -73,6 +75,7 @@ CREATE TABLE historico_usuario(
     usuario_id INTEGER,
     musica_id INTEGER,
     data_historico DATETIME NOT NULL,
+    UNIQUE (usuario_id, musica_id),
     CONSTRAINT PRIMARY KEY (usuario_id, musica_id),
     FOREIGN KEY (usuario_id) REFERENCES pessoa_usuaria (pessoa_id),
     FOREIGN KEY (musica_id) REFERENCES musica (musica_id)
